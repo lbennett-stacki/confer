@@ -1,23 +1,47 @@
 import { Configuration } from "oidc-provider";
 import Account from "./account";
 
-export const clientBaseUrl = "http://localhost:3001";
-export const clientRedirectUrl = `${clientBaseUrl}/api/confer/redirect`;
+const uiClientId = "ergergergegr";
+const uiSecret = "7Fjfp0ZBr1KtDRbnfVdmIw";
+export const uiBaseUrl = "http://localhost:3001";
+export const uiRedirectUrl = `${uiBaseUrl}/api/confer/redirect`;
 
-export const testResource = `${clientBaseUrl}/api/trpc`;
+const adminClientId = "kdjsnfksdfns";
+const adminSecret = "asdkjnasjkfnsdf";
+export const adminBaseUrl = "http://localhost:3002";
+export const adminRedirectUrl = `${adminBaseUrl}/api/confer/redirect`;
 
-const firstParty = ["ergergergegr"];
+const demoClientId = "skdfskfsdfsdf";
+const demoSecret = "9a8shDasdf8ahf9wfhweif";
+export const demoBaseUrl = "http://localhost:3003";
+export const demoRedirectUrl = `${demoBaseUrl}/api/confer/redirect`;
 
-const isFirstParty = (party: string) => firstParty.includes(party);
+export const testResource = `${uiBaseUrl}/api/trpc`;
+
+const firstParties = [uiClientId, adminClientId, demoClientId];
+
+const isFirstParty = (party: string) => firstParties.includes(party);
 
 export const config: Configuration = {
   findAccount: Account.findAccount,
   clients: [
     {
-      client_id: firstParty[0] as string,
-      client_secret: "7Fjfp0ZBr1KtDRbnfVdmIw",
+      client_id: uiClientId,
+      client_secret: uiSecret,
       grant_types: ["refresh_token", "authorization_code"],
-      redirect_uris: [clientRedirectUrl],
+      redirect_uris: [uiRedirectUrl],
+    },
+    {
+      client_id: adminClientId,
+      client_secret: adminSecret,
+      grant_types: ["refresh_token", "authorization_code"],
+      redirect_uris: [adminRedirectUrl],
+    },
+    {
+      client_id: demoClientId,
+      client_secret: demoSecret,
+      grant_types: ["refresh_token", "authorization_code"],
+      redirect_uris: [demoRedirectUrl],
     },
   ],
   interactions: {
@@ -28,7 +52,7 @@ export const config: Configuration = {
           path = "/api/confer/sign-in";
           break;
         case "consent":
-          path = "/api/oidc/interaction";
+          path = "/api/confer/consent";
           break;
         default:
           throw new Error("invalid prompt type");
@@ -72,8 +96,7 @@ export const config: Configuration = {
 
     resourceIndicators: {
       enabled: true,
-      async getResourceServerInfo(ctx, resourceIndicator, client) {
-        console.log("getResourceServerInfo", resourceIndicator, client);
+      async getResourceServerInfo(_ctx, resourceIndicator, _client) {
         return {
           scope: "api:read api:write test",
           audience: resourceIndicator,
@@ -84,7 +107,7 @@ export const config: Configuration = {
           },
         };
       },
-      useGrantedResource: (ctx, model) => {
+      useGrantedResource: (_ctx, _model) => {
         return true;
       },
     },
@@ -130,8 +153,9 @@ export const config: Configuration = {
       grant.addOIDCScope("openid profile offline_access");
       grant.addOIDCClaims(["first_name"]);
       grant.addResourceScope(testResource, "api:read api:write test");
-      console.log(grant, "grant");
+
       await grant.save();
+
       return grant;
     }
 
@@ -141,8 +165,6 @@ export const config: Configuration = {
     if (!client.grantTypeAllowed("refresh_token")) {
       return false;
     }
-
-    console.log("issue refresh?", code.scopes);
 
     return code.scopes.has("offline_access");
   },

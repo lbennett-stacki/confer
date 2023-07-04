@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
 import { api } from "~/utils/api";
+import { useMe } from "@mdrxtech/confer-react-query";
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const { data: me } = useMe();
 
   return (
     <>
@@ -13,7 +15,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-center text-5xl font-extrabold tracking-tight text-white">
-            Confer <span className="text-[hsl(31,100%,70%)]">DevClient</span>
+            Confer <span className="text-[hsl(0,100%,70%)]">AdminClient</span>
           </h1>
           {me?.sub && (
             <h2 className="text-xl font-light tracking-tight text-white">

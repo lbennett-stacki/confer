@@ -12,13 +12,9 @@ export default async function signInInteractionHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("\n\n?. LOGIN INTERACTION HANDLER\n\n");
-
   const cookies = cookie.parse(req.headers.cookie || "");
 
   if (!cookies[interactionCookie]) {
-    console.log("\n\n2. REDIRECT TO SIGN IN PAGE\n\n");
-
     res.setHeader(
       "Set-Cookie",
       cookie.serialize(
@@ -39,11 +35,7 @@ export default async function signInInteractionHandler(
     return;
   }
 
-  console.log("\n\n3. CHECK INTERACTION\n\n");
-
   const interaction = await provider.interactionDetails(req, res);
-
-  console.log("interaction", interaction);
 
   if (interaction.prompt.name !== "login") {
     throw new Error("UNAUTHORIZED");
@@ -56,8 +48,6 @@ export default async function signInInteractionHandler(
       accountId: account.id,
     },
   };
-
-  console.log("result", result);
 
   const redirectTo = await provider.interactionResult(req, res, result, {
     mergeWithLastSubmission: false,
@@ -77,8 +67,6 @@ export default async function signInInteractionHandler(
       }
     )
   );
-
-  console.log("set cookie!", redirectTo);
 
   res.status(200).json({ redirectTo });
 }

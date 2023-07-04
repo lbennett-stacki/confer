@@ -75,7 +75,6 @@ class Account {
     if (!logins.get(id)) {
       logins.set(id, new Account(id, claims));
     }
-    console.log("federated logins");
     return logins.get(id);
   }
 
@@ -84,7 +83,6 @@ class Account {
       logins.set(login, new Account(login));
     }
 
-    console.log("logins logins", logins.get(login));
     return logins.get(login);
   }
 

@@ -1,6 +1,6 @@
 packages:
   # Apps
-  - apps/dev
+  - apps/demo
   - apps/ui
   - apps/admin
 

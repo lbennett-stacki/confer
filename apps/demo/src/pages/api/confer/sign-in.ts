@@ -4,7 +4,7 @@ import {
   clientId,
   clientRedirectUri,
   testResource,
-} from "../../../../config";
+} from "../../../config";
 
 export default ConferSignInRoute({
   oidcUrl,

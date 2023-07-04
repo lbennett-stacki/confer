@@ -2,6 +2,7 @@
   "name": "@mdrxtech/confer-nextjs",
   "version": "0.1.0",
   "private": true,
+  "main": "./src/index.ts",
   "dependencies": {
     "@mdrxtech/confer-oidc-provider": "^0.0.0",
     "@tanstack/react-query": "^4.29.7",

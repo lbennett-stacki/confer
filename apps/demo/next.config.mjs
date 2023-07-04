@@ -18,6 +18,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  transpilePackages: ["@mdrxtech/confer-react-query"],
 };
 
 export default config;

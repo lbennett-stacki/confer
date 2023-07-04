@@ -463,8 +463,6 @@ async function logoutSource(ctx, form) {
 async function renderError(ctx, out, error) {
   shouldChange("renderError", "customize the look of the error page");
 
-  console.log("error!!!!", error, "or", out);
-
   ctx.type = "html";
   ctx.body = `<!DOCTYPE html>
     <head>

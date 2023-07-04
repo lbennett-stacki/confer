@@ -27,8 +27,6 @@ export default function SignIn() {
           credentials: "same-origin",
         })
       ).json();
-      console.log("login result", result);
-
       if (!result.redirectTo) {
         throw new Error("login failed"); // TODO: handle error
       }

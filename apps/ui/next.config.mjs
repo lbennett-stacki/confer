@@ -19,7 +19,10 @@ const config = {
     defaultLocale: "en",
   },
 
-  transpilePackages: ["@mdrxtech/confer-oidc-provider"],
+  transpilePackages: [
+    "@mdrxtech/confer-oidc-provider",
+    "@mdrxtech/confer-react-query",
+  ],
 };
 
 export default config;

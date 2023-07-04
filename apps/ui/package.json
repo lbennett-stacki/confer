@@ -5,6 +5,7 @@
   "dependencies": {
     "@mdrxtech/confer-oidc-provider": "^0.0.0",
     "@mdrxtech/confer-react-query": "^0.1.0",
+    "@mdrxtech/confer-nextjs": "^0.1.0",
     "@prisma/client": "^4.14.0",
     "@t3-oss/env-nextjs": "^0.3.1",
     "@tanstack/react-query": "^4.29.7",
