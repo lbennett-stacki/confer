@@ -21,3 +21,4 @@ Click "Log in".
 1. Enjoy your session
 
 ![screenshot](./docs/assets/screenshot.png)
+![screenshot-two](./docs/assets/screenshot-two.png)
