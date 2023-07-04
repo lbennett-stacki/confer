@@ -59,28 +59,26 @@ export default async function signInInteractionHandler(
 
   console.log("result", result);
 
-  return provider.interactionFinished(req, res, result, {
+  const redirectTo = await provider.interactionResult(req, res, result, {
     mergeWithLastSubmission: false,
   });
 
-  // console.log("set cookie");
+  res.setHeader(
+    "Set-Cookie",
+    cookie.serialize(
+      interactionCookie,
+      signature.sign("REVOKED", interactionCookieSecret),
+      {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== "development",
+        expires: new Date(0),
+        sameSite: "strict",
+        path: "/",
+      }
+    )
+  );
 
-  // res.setHeader(
-  //   "Set-Cookie",
-  //   cookie.serialize(
-  //     interactionCookie,
-  //     signature.sign("REVOKED", interactionCookieSecret),
-  //     {
-  //       httpOnly: true,
-  //       secure: process.env.NODE_ENV !== "development",
-  //       expires: new Date(0),
-  //       sameSite: "strict",
-  //       path: "/",
-  //     }
-  //   )
-  // );
+  console.log("set cookie!", redirectTo);
 
-  // console.log("set cookie!", redirectTo);
-
-  // res.redirect(307, redirectTo);
+  res.status(200).json({ redirectTo });
 }

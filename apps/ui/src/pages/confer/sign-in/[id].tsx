@@ -19,14 +19,21 @@ export default function SignIn() {
       data.set("username", username);
       data.set("password", password);
 
-      return await (
+      const result = await (
         await fetch(`/api/confer/sign-in/${id}`, {
           method: "POST",
           body: data,
           headers: { "Content-Type": "x-www-form-data" },
-          credentials: "include",
+          credentials: "same-origin",
         })
       ).json();
+      console.log("login result", result);
+
+      if (!result.redirectTo) {
+        throw new Error("login failed"); // TODO: handle error
+      }
+
+      router.push(result.redirectTo);
     },
   });
   const [username, setUsername] = useState("");
