@@ -1,0 +1,48 @@
+{
+  "folders": [
+    {
+      "name": "Apps - API",
+      "path": "../apps/api"
+    },
+    {
+      "name": "Apps - NextJS",
+      "path": "../apps/nextjs"
+    },
+    {
+      "name": "Apps - Expo",
+      "path": "../apps/expo"
+    },
+    {
+      "name": "Packages - Auth",
+      "path": "../packages/auth"
+    },
+    {
+      "name": "Packages - Config",
+      "path": "../packages/config"
+    },
+    {
+      "name": "Packages - DB",
+      "path": "../packages/db"
+    },
+    {
+      "name": "Packages - Graph",
+      "path": "../packages/graph"
+    },
+    {
+      "name": "Packages - Graph UI",
+      "path": "../packages/graph-ui"
+    },
+    {
+      "name": "Packages - Logger",
+      "path": "../packages/logger"
+    },
+    {
+      "name": "Packages - UI",
+      "path": "../packages/ui"
+    },
+    {
+      "name": "Packages - UI Native",
+      "path": "../packages/ui-native"
+    }
+  ]
+}

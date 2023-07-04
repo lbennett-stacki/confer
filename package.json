@@ -1,0 +1,20 @@
+{
+  "name": "@mdrxtech/confer",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "lerna": "^7.1.1"
+  },
+  "dependencies": {
+    "eslint": "^8.38.0"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "dev": "lerna run dev",
+    "db:generate": "lerna run db:generate",
+    "db:push": "lerna run db:push",
+    "db:push:force": "lerna run db:push:force"
+  }
+}

@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["jsonProtocol"]
+}
+
+datasource db {
+    provider = "postgres"
+    url      = env("DATABASE_URL")
+}
+
+model ConferToken {
+    id           String   @id @default(cuid())
+    accessToken  String
+    refreshToken String
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+}

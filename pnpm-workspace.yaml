@@ -1,0 +1,14 @@
+packages:
+  # Apps
+  - apps/dev
+  - apps/ui
+  - apps/admin
+
+  # Packages
+  # OIDC
+  - packages/oidc/ui
+  - packages/oidc/provider
+  # CLIENTS
+  - packages/clients/nextjs
+  - packages/clients/react-query
+  - packages/clients/trpc
