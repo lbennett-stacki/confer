@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { api } from "~/utils/api";
-import { useMe } from "@mdrxtech/confer-react-query";
+import { useMe } from "@confer/react-query";
 
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | @mdrxtech/confer-admin</title>
+        <title>Home | @confer/admin</title>
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">

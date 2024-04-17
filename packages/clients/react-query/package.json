@@ -1,5 +1,5 @@
 {
-  "name": "@mdrxtech/confer-react-query",
+  "name": "@confer/react-query",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.ts",

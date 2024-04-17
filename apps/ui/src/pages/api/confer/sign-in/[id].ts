@@ -2,7 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from "next";
 import cookie from "cookie";
 import signature from "cookie-signature";
 import { nanoid } from "nanoid";
-import Account from "@mdrxtech/confer-oidc-provider/support/account";
+import Account from "@confer/oidc-provider/support/account";
 import { provider } from "~/utils/provider";
 
 export const interactionCookie = "ConferInteraction";

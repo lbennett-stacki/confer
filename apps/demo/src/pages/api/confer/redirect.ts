@@ -1,4 +1,4 @@
-import { ConferRedirectRoute } from "@mdrxtech/confer-nextjs";
+import { ConferRedirectRoute } from "@confer/nextjs";
 import {
   oidcUrl,
   clientId,

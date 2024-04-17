@@ -20,8 +20,8 @@ const config = {
   },
 
   transpilePackages: [
-    "@mdrxtech/confer-oidc-provider",
-    "@mdrxtech/confer-react-query",
+    "@confer/oidc-provider",
+    "@confer/react-query",
   ],
 };
 

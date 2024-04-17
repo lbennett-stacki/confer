@@ -19,7 +19,7 @@ const config = {
     defaultLocale: "en",
   },
 
-  transpilePackages: ["@mdrxtech/confer-react-query"],
+  transpilePackages: ["@confer/react-query"],
 };
 
 export default config;

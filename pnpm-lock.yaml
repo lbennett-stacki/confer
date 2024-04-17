@@ -17,10 +17,10 @@ importers:
 
   apps/admin:
     dependencies:
-      '@mdrxtech/confer-nextjs':
+      '@confer/nextjs':
         specifier: ^0.1.0
         version: link:../../packages/clients/nextjs
-      '@mdrxtech/confer-react-query':
+      '@confer/react-query':
         specifier: ^0.1.0
         version: link:../../packages/clients/react-query
       '@prisma/client':
@@ -132,10 +132,10 @@ importers:
 
   apps/demo:
     dependencies:
-      '@mdrxtech/confer-nextjs':
+      '@confer/nextjs':
         specifier: ^0.1.0
         version: link:../../packages/clients/nextjs
-      '@mdrxtech/confer-react-query':
+      '@confer/react-query':
         specifier: ^0.1.0
         version: link:../../packages/clients/react-query
       '@prisma/client':
@@ -247,13 +247,13 @@ importers:
 
   apps/ui:
     dependencies:
-      '@mdrxtech/confer-nextjs':
+      '@confer/nextjs':
         specifier: ^0.1.0
         version: link:../../packages/clients/nextjs
-      '@mdrxtech/confer-oidc-provider':
+      '@confer/oidc-provider':
         specifier: ^0.0.0
         version: link:../../packages/oidc/provider
-      '@mdrxtech/confer-react-query':
+      '@confer/react-query':
         specifier: ^0.1.0
         version: link:../../packages/clients/react-query
       '@prisma/client':
@@ -371,7 +371,7 @@ importers:
 
   packages/clients/nextjs:
     dependencies:
-      '@mdrxtech/confer-oidc-provider':
+      '@confer/oidc-provider':
         specifier: ^0.0.0
         version: link:../../oidc/provider
       '@tanstack/react-query':
@@ -565,7 +565,7 @@ importers:
 
   packages/clients/trpc:
     dependencies:
-      '@mdrxtech/confer-oidc-provider':
+      '@confer/oidc-provider':
         specifier: ^0.0.0
         version: link:../../oidc/provider
       '@t3-oss/env-nextjs':

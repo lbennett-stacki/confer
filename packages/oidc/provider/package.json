@@ -1,5 +1,5 @@
 {
-  "name": "@mdrxtech/confer-oidc-provider",
+  "name": "@confer/oidc-provider",
   "version": "0.0.0",
   "license": "UNLICENSED",
   "type": "module",

@@ -1,4 +1,4 @@
-import { ConferSignInRoute } from "@mdrxtech/confer-nextjs";
+import { ConferSignInRoute } from "@confer/nextjs";
 import {
   oidcUrl,
   clientId,

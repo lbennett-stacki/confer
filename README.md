@@ -1,4 +1,4 @@
-# MDRxConfer
+# Confer
 
 An OIDC provider with typesafe integrations for ReactQuery, NextJS and tRPC.
 

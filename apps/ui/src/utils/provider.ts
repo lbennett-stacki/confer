@@ -1,4 +1,4 @@
-import { providerFactory } from "@mdrxtech/confer-oidc-provider";
+import { providerFactory } from "@confer/oidc-provider";
 import { IncomingMessage, ServerResponse } from "http";
 import { Http2ServerRequest, Http2ServerResponse } from "http2";
 import Provider from "oidc-provider";
